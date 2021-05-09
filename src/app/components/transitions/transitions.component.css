@@ -1,0 +1,71 @@
+.fields{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    
+}
+
+.receita {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: green;
+    border-radius: 10px;
+    width: 150px;
+    height: 90px;
+}
+.receita>label{
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.despesa {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: rgb(223, 59, 37);
+    border-radius: 10px;
+    width: 150px;
+    height: 90px;
+}
+.despesa>label{
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.saldo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1%;
+    margin-top: 1%;
+    background-color: rgb(190, 178, 10);
+    border-radius: 10px;
+    width: 150px;
+    height: 90px;
+}
+.saldo>label{
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.num {
+    font-size: 30px;
+}
+
+.showValues {
+    display: flex;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 2px solid;
+    margin: 20px;
+}
+.tab{
+    width: 20px;
+}
