@@ -10,42 +10,61 @@ export class TransitionsComponent implements OnInit {
 
   mvt: Mov = new Mov();
   mvtList: Mov[] = [];
-  receita: number = 0
-  despesa: number = 0
-  saldo: number = 0
+
 
   ngOnInit(): void {
-    this.load()
+    this.loadLocal()
   }
 
 
-  saveList(form) {
+  sav(form) {
+
+    if (this.mvt.tipo === 'receita') {
+      this.mvt.receita = this.mvt.valor
+    } else {
+      this.mvt.despesa = this.mvt.valor
+    }
+
     this.mvtList.push(this.mvt)
-    this.save()
+
+    console.log(this.mvtList)
+    this.saveLocal()
     this.mvt = new Mov()
   }
 
-  calc(){
-    if (this.mvt.tipo === 'r') {
-      this.receita += this.mvt.valor
-      this.saldo += this.mvt.valor
-    } else {
-      this.despesa -= this.mvt.valor
-      this.saldo -= this.mvt.valor
+  rec() {
+    let rec = 0
+    for (let i = 0; i < this.mvtList.length; i++) {
+      rec += this.mvtList[i].receita
     }
+    return rec
+    console.log(rec)
+  }
+
+  desp() {
+    let desp = 0
+    for (let i = 0; i < this.mvtList.length; i++) {
+      desp += this.mvtList[i].despesa
+    }
+    return desp
+
+  }
+
+  sald() {
+    return this.rec() - this.desp()
   }
 
 
-  save(){
+  saveLocal() {
     const data = JSON.stringify(this.mvtList)
     localStorage.setItem('mvtList', data)
   }
 
-  load(){
+  loadLocal() {
     const data = localStorage.getItem('mvtList')
     if (data) {
       this.mvtList = JSON.parse(data)
-    }else{
+    } else {
       this.mvtList = []
     }
   }

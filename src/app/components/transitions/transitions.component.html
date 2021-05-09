@@ -1,23 +1,24 @@
-<form #myForm="ngForm" (ngSubmit)="saveList(myForm)">
+<form #myForm="ngForm" (ngSubmit)="sav(myForm)">
     <div class="showValues">
         <div class="receita">
             <label>Receita</label><br>
             <div class="num">
-                {{ receita | currency: 'BRL' }}
+
+                {{ rec() | currency: 'BRL' }}
             </div>
         </div>
 
         <div class="despesa">
             <label>Despesa</label><br>
             <div class="num">
-                {{ despesa | currency: 'BRL' }}
+                {{ desp() | currency: 'BRL' }}
             </div>
         </div>
 
         <div class="saldo">
             <label>Saldo</label><br>
             <div class="num">
-                {{ saldo | currency: 'BRL' }}
+                {{ sald() | currency: 'BRL' }}
             </div>
         </div>
     </div>
@@ -25,8 +26,8 @@
     <div class="fields">
         <label>Tipo</label>
         <select name="select" [(ngModel)]="mvt.tipo">
-            <option value="d" selected>Despesas</option>
-            <option value="r">Receita</option>
+            <option value="despesa" selected>Despesas</option>
+            <option value="receita">Receita</option>
         </select>
 
         <label>Descrição</label>
@@ -35,7 +36,7 @@
         <label>Valor</label>
         <input type="number" name="valor" [(ngModel)]="mvt.valor">
 
-        <input type="submit" value="Salvar" (click)="calc()">
+        <input type="submit" value="Salvar">
     </div>
 </form>
 
@@ -51,7 +52,7 @@
         <tr *ngFor="let l of mvtList">
             <th>{{ l.tipo }}</th>
             <th>{{ l.descricao }}</th>
-            <th>{{ l.valor }}</th>
+            <th>{{ l.valor | currency: 'BRL' }}</th>
         </tr>
     </tbody>
 </table>
