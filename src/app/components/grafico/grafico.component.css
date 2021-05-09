@@ -15,13 +15,13 @@
   
   .column {
     width: 20px;
-    background: rgb(232,7,7);
-    background: linear-gradient(180deg, rgba(232,7,7,0.47942927170868344) 0%, rgba(240,6,6,0.6418942577030813) 13%, rgba(252,69,69,1) 35%);
+    background: rgb(28,181,0);
+    background: linear-gradient(180deg, rgba(28,181,0,0.47942927170868344) 0%, rgba(1,201,10,0.6418942577030813) 13%, rgba(134,252,69,1) 35%);
   }
   
   .column + .column {
-    background: rgb(28,181,0);
-background: linear-gradient(180deg, rgba(28,181,0,0.47942927170868344) 0%, rgba(1,201,10,0.6418942577030813) 13%, rgba(134,252,69,1) 35%);
+    background: rgb(232,7,7);
+    background: linear-gradient(180deg, rgba(232,7,7,0.47942927170868344) 0%, rgba(240,6,6,0.6418942577030813) 13%, rgba(252,69,69,1) 35%);
   }
   
   .column-value {

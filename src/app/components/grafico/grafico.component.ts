@@ -18,8 +18,8 @@ export class GraficoComponent implements OnInit {
     this.dados2 = [
       {
         mes: 'janeiro',
-        receita: 2000,
-        despesa: 1000
+        receita: 1200,
+        despesa: 50
       },
       {
         mes: 'fevereiro',
