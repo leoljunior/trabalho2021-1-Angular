@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TransitionsComponent } from './components/transitions/transitions.component';
 import { FormsModule } from '@angular/forms'
+import { GraficoComponent } from './components/grafico/grafico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TransitionsComponent
+    TransitionsComponent,
+    GraficoComponent
   ],
   imports: [
     BrowserModule,
