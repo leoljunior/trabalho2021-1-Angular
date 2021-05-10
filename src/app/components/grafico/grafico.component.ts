@@ -6,7 +6,6 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrls: ['./grafico.component.css']
 })
 export class GraficoComponent implements OnInit {
-  dados2
   maxValue
   graficoData
 
@@ -14,40 +13,21 @@ export class GraficoComponent implements OnInit {
   dados
 
   ngOnInit () {
-    // --- parametro
-    this.dados2 = [
-      {
-        mes: 'janeiro',
-        receita: 1200,
-        despesa: 50
-      },
-      {
-        mes: 'fevereiro',
-        receita: 2500,
-        despesa: 1500
-      },
-      {
-        mes: 'março',
-        receita: 5000,
-        despesa: 2500
-      }
-    ]
-
-    // --- codigo do component de grafico
+  
     this.maxValue = 0
 
-    this.dados2.forEach(item => {
+    this.dados.forEach(item => {
       this.maxValue =
-        item.receita > this.maxValue ? item.receita : this.maxValue
+        item.recMes > this.maxValue ? item.recMes : this.maxValue
       this.maxValue =
-        item.despesa > this.maxValue ? item.despesa : this.maxValue
+        item.despMes > this.maxValue ? item.despMes : this.maxValue
     })
 
-    this.graficoData = this.dados2.map(item => {
+    this.graficoData = this.dados.map(item => {
       return {
-        barra1: (item.receita / this.maxValue) * 100,
-        barra2: (item.despesa / this.maxValue) * 100,
-        label: item.mes
+        barra1: (item.recMes / this.maxValue) * 100,
+        barra2: (item.despMes / this.maxValue) * 100,
+        label: item.label
       }
     })
   }
