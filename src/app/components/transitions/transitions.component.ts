@@ -288,4 +288,8 @@ export class TransitionsComponent implements OnInit {
       this.mvtList = []
     }
   }
+  //RECARREGAR PAGINA
+  reload(){
+    location.reload()
+  }
 }

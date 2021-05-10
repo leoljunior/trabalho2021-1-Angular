@@ -31,8 +31,8 @@
                 <div>
                     <label>Tipo</label>
                     <select name="select" [(ngModel)]="mvt.tipo">
-                        <option value="despesa" selected>Despesas</option>
                         <option value="receita">Receita</option>
+                        <option value="despesa">Despesa</option>
                     </select>
                 </div>
 
@@ -61,10 +61,10 @@
 
                 <div>
                     <label>Valor</label>
-                    <input type="number" name="valor" [(ngModel)]="mvt.valor">
+                    <input type="number" name="valor" placeholder="R$ 00,00" [(ngModel)]="mvt.valor">
                 </div>
                 <div>
-                    <input type="submit" value="Salvar">
+                    <input type="submit" value="Salvar" (click)="reload()">
                 </div>
             </div>
         </form>
