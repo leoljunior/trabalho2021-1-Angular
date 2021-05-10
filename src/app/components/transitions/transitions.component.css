@@ -119,12 +119,11 @@ th, td {
     border-right: 8px solid #38b000;
    
 }
-
-
 .graph-container {
     display: flex;
     height: 100%;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 10%;
     justify-content: center;
 }
 
