@@ -34,12 +34,4 @@ export class GraficoComponent implements OnInit {
       }
     })
   }
-
-  nullGraph(){
-    let barra1 = 0
-    let barra2 = 0
-    let label = ''
-    let rec = 0
-    let des = 0
-  }
 }
